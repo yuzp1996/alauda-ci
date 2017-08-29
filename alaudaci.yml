@@ -1,12 +1,9 @@
 version: "0.1.0"
 pre_ci_boot:
-    image: index.alauda.cn/alaudaorg/alauda-sonar-scanner-ci
+    image: index.alauda.cn/alaudaci/u14golang:1.6
     tag: latest
 ci:
     - make build
-    - make test
-    - cp -r ./bin $ALAUDACI_DEST_DIR
-    - cp Dockerfile $ALAUDACI_DEST_DIR
 sonarqube:
   quality_gate: "default",
   code_scan_path: "./src",
