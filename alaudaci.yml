@@ -9,4 +9,4 @@ sonarqube:
   code_scan_path: "./src",
   code_encoding: "UTF-8",
   code_language: "go",
-  integration_name: "int-dev-sonarqube-int-mesos"
+integration_name: "int-dev-sonarqube-int-mesos"
