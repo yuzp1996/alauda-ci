@@ -10,6 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+               sh "env"
                sh "echo ${params.PERSON}"
                echo "Hello ${params.PERSON}"
                
