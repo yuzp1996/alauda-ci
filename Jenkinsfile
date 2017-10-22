@@ -7,7 +7,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "make build"
+               sh "echo ${params.PERSON}"
+               echo "Hello ${params.PERSON}"
+               
             }
         }
         stage('Test') {
