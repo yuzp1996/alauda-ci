@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'make test'
+                echo "this is test"
             }
         }
         stage('Deploy') {
