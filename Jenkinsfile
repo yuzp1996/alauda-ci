@@ -17,6 +17,23 @@ pipeline {
                
             }
         }
+        stage("ParallelStage"){
+            parallel{
+                stage('CodeScan'){
+                    steps{
+                        echo "thisis code scan"
+                        sleep 5
+                    }
+                }
+                stage('WhatEver'){
+                    steps{
+                        echo "what ever it is .."
+                        sleep 6
+                    }
+                }
+            }
+        }
+
         stage('Test') {
             steps {
                 echo "this is test"
