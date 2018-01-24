@@ -8,6 +8,11 @@ pipeline {
     }
 
     stages {
+       stage("ShowGITData"){
+          steps{
+             sh "git show-ref --tags"
+          }
+       }
         stage('Build') {
             steps {
                sh "env"
