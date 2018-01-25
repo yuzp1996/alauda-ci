@@ -10,7 +10,8 @@ pipeline {
     stages {
        stage("ShowGITData"){
           steps{
-             sh "git show-ref --tags"
+              echo "show git data"
+             //sh "git show-ref --tags"
           }
        }
         stage('Build') {
