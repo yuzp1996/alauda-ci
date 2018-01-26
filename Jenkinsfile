@@ -6,18 +6,21 @@ pipeline {
     environment { 
         CC = 'clang'
     }
+    
 
     stages {
+        stage("check"){
+              script{
+                  def scmVars = checkout scm
+                  BRANCH_NAME = scmVars.GIT_BRANCH
+                  VERSION = "1"
+              }
+        }
        stage("ShowGITData"){
           steps{
               echo "show git data"
               sh "git show-ref --tags"
               sh "printenv"
-              script{
-                  VERSION = "1"
-                  def scmVars = checkout scm
-                  BRANCH_NAME = scmVars.GIT_BRANCH
-              }
           }
        }
        stage("ReleaseBranch"){
