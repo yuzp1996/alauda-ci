@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage("check"){
             steps{
-                def scmVars = checkout scm
+                scmVars = checkout scm
                 script{
                     echo "${scmVars}"
                     BRANCH_NAME = scmVars.GIT_BRANCH
