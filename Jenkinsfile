@@ -29,7 +29,7 @@ pipeline {
        stage("ReleaseBranch"){
            when{
                expression{
-                   BRANCH_NAME ==~ /release.*/ && VERSION != ""
+                   BRANCH_NAME ==~ /HEAD.*/ && VERSION != ""
                }
            }
            steps{
