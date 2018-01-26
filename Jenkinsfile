@@ -12,9 +12,7 @@ pipeline {
         stage("check"){
             steps{
                 script{
-                    scmVars = checkout scm
-                    echo "${scmVars}"
-                    BRANCH_NAME = scmVars.GIT_BRANCH
+                    BRANCH_NAME = sh(script:"git rev-parse --abbrev-ref HEAD", returnStdout:true).trim()
                     VERSION = "1"
                 }
 
