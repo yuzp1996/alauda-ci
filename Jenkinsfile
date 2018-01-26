@@ -14,6 +14,7 @@ pipeline {
                 script{
                     BRANCH_NAME = sh(script:"git rev-parse --abbrev-ref HEAD", returnStdout:true).trim()
                     VERSION = "1"
+                    echo "branch is ${BRANCH_NAME}"
                 }
 
             }
