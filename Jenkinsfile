@@ -11,8 +11,19 @@ pipeline {
        stage("ShowGITData"){
           steps{
               echo "show git data"
-             //sh "git show-ref --tags"
+              VERSION = "1"
+              sh "git show-ref --tags"
           }
+       }
+       stage("ReleaseBranch"){
+           when{
+               expression{
+                   BRANCH_NAME ==~ /release.*/ && VERSION != ""
+               }
+           }
+           steps{
+               echo "in test branch...."
+           }
        }
         stage('Build') {
             steps {
