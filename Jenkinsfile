@@ -12,6 +12,7 @@ pipeline {
           steps{
               echo "show git data"
               sh "git show-ref --tags"
+              sh "printenv"
               script{
                   VERSION = "1"
                   def scmVars = checkout scm
