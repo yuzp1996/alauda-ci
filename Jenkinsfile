@@ -14,6 +14,8 @@ pipeline {
               sh "git show-ref --tags"
               script{
                   VERSION = "1"
+                  def scmVars = checkout scm
+                  BRANCH_NAME = scmVars.GIT_BRANCH
               }
           }
        }
