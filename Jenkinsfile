@@ -11,13 +11,14 @@ pipeline {
     stages {
         stage("check"){
             steps{
-              script{
-                  def scmVars = checkout scm
-                  BRANCH_NAME = scmVars.GIT_BRANCH
-                  VERSION = "1"
-              }
-            }
+                def scmVars = checkout scm
+                script{
+                    echo "${scmVars}"
+                    BRANCH_NAME = scmVars.GIT_BRANCH
+                    VERSION = "1"
+                }
 
+            }
         }
        stage("ShowGITData"){
           steps{
