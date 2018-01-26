@@ -11,8 +11,10 @@ pipeline {
        stage("ShowGITData"){
           steps{
               echo "show git data"
-              VERSION = "1"
               sh "git show-ref --tags"
+              script{
+                  VERSION = "1"
+              }
           }
        }
        stage("ReleaseBranch"){
