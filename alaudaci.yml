@@ -1,7 +1,7 @@
 version: "0.1.0"
 pre_ci_boot:
-    image: index.alauda.cn/alaudaci/u14golang
-    tag: "1.6"
+    image: index.alauda.cn/alaudaorg/golang
+    tag: "1.8-alpine"
 ci:
     - make build
 sonarqube:
