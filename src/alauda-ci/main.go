@@ -2,9 +2,12 @@ package main
 
 import (
 	"fmt"
+        "time"
 )
 
 func main() {
-	fmt.Println("hello alauda")
-	fmt.Println("looks good ,but what is 137?")
+	for {
+		fmt.Println("Hello world!")
+		time.Sleep(time.Second * 1)
+	}
 }
