@@ -40,7 +40,6 @@ pipeline {
                sh "env"
                sh "echo ${params.PERSON}"
                echo "Hello ${params.PERSON}"
-               input "what amazing job.."
                
             }
         }
