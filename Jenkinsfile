@@ -20,7 +20,7 @@ pipeline {
         }
        stage("ShowGITData"){
           steps{
-              echo "show git data"
+              echo "show git data。。。。"
               sh "git show-ref --tags"
               sh "printenv"
           }
