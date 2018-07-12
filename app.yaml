@@ -19,6 +19,14 @@ spec:
         imagePullPolicy: Always
         name: alauda-ci-0
         resources: {}
+        env:
+        - name: TestKey
+          value: 111
+        - name: TestName
+          value: testname111
+        envFrom:
+        - configMapRef:
+            name: registry
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
