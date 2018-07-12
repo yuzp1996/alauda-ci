@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: ''
+  name: alauda-ci
+spec:
+  template:
+    metadata:
+      labels:
+        service.alauda.io/name: alauda-ci
+    spec:
+      containers:
+        - name: alauda-ci
+          image: '172.30.0.133:5000/alauda-ci:latest'
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: 200M
+              cpu: 200m
+      hostNetwork: false
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: alauda-ci
+  namespace: ''
+spec:
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: alauda-ci
+  minReplicas: 1
+  maxReplicas: 20

@@ -1,0 +1,12 @@
+version: "0.1.0"
+pre_ci_boot:
+    image: index.alauda.cn/alaudaorg/gobuild
+    tag: "1.8-alpine"
+ci:
+    - make build
+sonarqube:
+  quality_gate: ""
+  code_scan_path: "./src"
+  code_encoding: "UTF-8"
+  code_language: "go"
+integration_name: "int-dev-sonarqube-int-mesos"
