@@ -15,7 +15,7 @@ spec:
     spec:
       affinity: {}
       containers:
-      - image: index.alauda.cn/alaudaorg/alauda-ci:latest
+      - image: registry.default.haproxy-52-81-0-20-testorg001.myalauda.cn/chengjingtao/alauda-ci:latest
         imagePullPolicy: Always
         name: alauda-ci-0
         resources: {}
