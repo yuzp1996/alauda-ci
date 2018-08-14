@@ -1,4 +1,4 @@
-FROM https://10.23.34.34/debian:jessie
+FROM yugougou/ping:123321
 COPY bin/main /main
 RUN chmod +x /main
 ENTRYPOINT [ "/main" ]
