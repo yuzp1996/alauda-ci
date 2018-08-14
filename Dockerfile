@@ -1,4 +1,4 @@
-FROM http://172.265.456.54/zpyutest:sdfds
+FROM yugougou/ping:123231
 COPY bin/main /main
 RUN chmod +x /main
 ENTRYPOINT [ "/main" ]
