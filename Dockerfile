@@ -1,4 +1,4 @@
-FROM yugougou/fromalauda:v1.0
+FROM index.alauda.cn/debian:jessie
 COPY bin/main /main
 RUN chmod +x /main
 ENTRYPOINT [ "/main" ]
